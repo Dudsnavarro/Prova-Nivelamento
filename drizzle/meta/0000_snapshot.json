@@ -1,0 +1,101 @@
+{
+  "id": "83f6bc43-cd8e-452e-8cdb-85d4b3f612c5",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.computador": {
+      "name": "computador",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigserial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "nome": {
+          "name": "nome",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "cor": {
+          "name": "cor",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "dataFabricacao": {
+          "name": "dataFabricacao",
+          "type": "date",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.periferico": {
+      "name": "periferico",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigserial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "nome": {
+          "name": "nome",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "computador_id": {
+          "name": "computador_id",
+          "type": "bigint",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "periferico_computador_id_computador_id_fk": {
+          "name": "periferico_computador_id_computador_id_fk",
+          "tableFrom": "periferico",
+          "tableTo": "computador",
+          "columnsFrom": [
+            "computador_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}
